@@ -1,2 +1,2 @@
 # VSCodeの設定ファイルの除外
-*.vscode/
+.vscode/
