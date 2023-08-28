@@ -19,6 +19,7 @@ int main() {
     graph.resize(numberOfVertices);
     visited.resize(numberOfVertices);
 
+    // 隣接リストの入力
     for (int i=0;i<numberOfEdges;i++) {
         int u, v;
         cin >> u >> v;
