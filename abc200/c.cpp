@@ -2,14 +2,21 @@
 using namespace std;
 
 int main() {
-    int n;
+    long long n;
     cin >> n;
-    set<int> a;
-    for(int i=0;i<n;i++) {
-        int t;
-        cin >> t;
-        a.insert(t);
+    vector<int> a(n);
+    for(auto& i : a) {
+        cin >> i;
+        i %= 200;
     }
-    for(auto& i : a) cout << i << endl;
+    sort(a.begin(), a.end());
+    long long sum = 0;
+    for(int i=0;i<200;i++) {
+        if(count(a.begin(), a.end(), i) != 1) {
+            long long t = count(a.begin(), a.end(), i);
+            sum += (t*(t-1))/2;
+        }
+    }
+    cout << sum << endl;
     return 0;
 }
