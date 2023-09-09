@@ -1,41 +1,28 @@
 #include <bits/stdc++.h>
-using namespace std;
-
-class Person {
-    private:
-        int numberOfBets;
-        vector<int> bets;
-
-    public:
-        void setPerson(int numberOfBets, vector<int> bets) {
-            this->numberOfBets = numberOfBets;
-            bets.resize(numberOfBets);
-            this->bets = bets;
-        }
-
-        int getNumberOfBets() { return numberOfBets; }
-        vector<int> getBets() { return bets; }
-};
 
 int main() {
-    int numberOfPeople;
-    vector<Person> people(numberOfPeople);
-    for(auto& person : people) {
-        int numberOfBets;
-        cin >> numberOfBets;
-        vector<int> bets(numberOfBets);
-        for(auto& bet : bets) cin >> bet;
-        person.setPerson(numberOfBets, bets);
-    }
+    string str;
+    cin >> str;
 
-    int outcome;
-    cin >> outcome;
-    int numberOfPeopleMatched = 0;
-    for(auto& person : people) if(std::count(person.getBets().begin(), person.getBets().end(), outcome)) numberOfPeopleMatched++;
-    vector<Person> peopleMatched(numberOfPeopleMatched);
-    for(auto& personMatched : peopleMatched) {
-        
+    if(str=="tourist") {
+        cout << 3858 << endl;
+    } else if(str=="ksun48") {
+        cout << 3679 << endl;
+    } else if(str=="Benq") {
+        cout << 3658 << endl;
+    } else if(str=="apiad") {
+        cout << 3638 << endl;
+    } else if(str=="Stonefeang") {
+        cout << 3613 << endl;
+    } else if(str=="ecnerwala") {
+        cout << 3613 << endl;
+    } else if(str=="mnbvmar") {
+        cout << 3555 << endl;
+    } else if(str=="newbiedmy") {
+        cout << 3516 << endl;
+    } else if(str=="semiexp") {
+        cout << 3481 << endl;
     }
-
+    
     return 0;
 }
