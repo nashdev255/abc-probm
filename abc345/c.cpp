@@ -1,26 +1,22 @@
-#include <iostream>
-#include <string>
-#include <algorithm>
-using std::cin;
-using std::cout;
-using std::endl;
+#include <bits/stdc++.h>
+using namespace std;
+using ll = long long;
+
+ll comb(ll c) {
+  return c*(c-1)/2;
+}
 
 int main() {
-  std::string s;
-  cin >> s;
-  long long numberOfPairs = ((s.length() - 1) * s.length()) / 2;
-  std::sort(s.begin(), s.end());
-  for ( auto it = s.begin(); it != s.end(); it++ ) {
-    const long long count = std::count(s.begin(), s.end(), *it);
-    if ( 1 < count ) {
-      int num = 0;
-      for ( int i = 1; i <= count; i++ ) {
-        num += count;
-      }
-      numberOfPairs -= num;
-      it += (count - 1);
-    }
+  string s;
+  cin>>s;
+  ll ans=0,same=0;
+  vector<ll> cnt(26);
+  for(int i=0;i<cnt.size();i++){
+    cnt[i]=count(s.begin(),s.end(),'a'+i);
+    same+=comb(cnt[i]);
   }
-  cout << numberOfPairs << endl;
+  ans=comb(s.size())-same;
+  if(same)ans++;
+  cout<<ans<<endl;
   return 0;
 }
